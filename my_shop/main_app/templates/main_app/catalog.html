@@ -1,0 +1,39 @@
+{% extends 'main_app/base.html' %}
+{% csrf_token %}
+
+{% block title %} 
+{{ title }}   
+{% endblock %}
+
+{% block content %} 
+    <h1>Каталог товаров</h1>
+    <div class="row row-cols-1 row-cols-md-5 mb-3 text-center">
+        {% for product in products %}
+            <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">
+                            <li>
+                                <a href="{% url 'product_page' product.id %}">
+                                    <h5>{{ product.title }}</h5>
+                                </a>
+                            </li>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">{{ product.price }}<small class="text-muted fw-light">/рублей</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>{{ product.category }}</li>
+                                <li>{{ product.subtitle }}</li>
+                                {% if product.image %}
+                                <img src="{{ product.image.url }}" width="20%">
+                                {% endif %}
+                            </ul>
+                        <button href="{% url 'add_to_cart' %}" type="button" class="w-100 btn btn-lg btn-outline-primary">в корзину</button>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>    
+{% endblock %}
+

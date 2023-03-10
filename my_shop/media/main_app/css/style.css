@@ -1,0 +1,36 @@
+#allbody {
+    	width: 100%;
+    	display: flex;
+	flex-direction: column;    
+}
+
+#header {
+    	width: 100%;
+}
+
+#body {
+    	width: 100%;
+
+    	display: flex;
+    	justify-content: center;
+	align-items: flex-start;
+}
+
+#leftmenu {
+    width: 80%;
+
+}
+
+#leftmenu_inside {
+	margin-left: 2%
+
+}
+
+#mainbody {
+    width: 78%;
+    display: flex;
+    justify-content: left;
+}
+
+
+

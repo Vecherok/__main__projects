@@ -1,0 +1,30 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %} 
+    {{ title }}
+{% endblock %}
+
+{% block content %} 
+    <h1>Заполните детали заказа</h1>
+    <form method="POST" >              <!--action="catalog.html"-->
+        {% csrf_token %}
+        {{ form.name }}<br>
+        {{ form.email }}<br>
+        {{ form.phone }}<br>
+        {{ form.adress }}<br>
+        {{ message }}
+        
+        <div class="btn-group" role="group" aria-label="Базовая группа кнопок-переключателей">
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="">
+            <label class="btn btn-outline-primary" for="btnradio1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Доставка</font></font></label>
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked="">
+            <label class="btn btn-outline-primary" for="btnradio2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Самовывоз</font></font></label>
+            
+        </div><br><br>
+
+        <button type="submit" class="btn btn-success">Оформить заказ</button>
+        <span>{{ error }}</span>
+    </form>
+
+{% endblock %}
+

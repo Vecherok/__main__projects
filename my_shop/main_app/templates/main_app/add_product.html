@@ -1,0 +1,21 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %} 
+    {{ title }}
+{% endblock %}
+
+{% block content %} 
+    <h1>Введите данные нового товара</h1>
+    <table>
+        <form class="as_p" method="POST" enctype="multipart/form-data" >              <!--action="catalog.html"-->
+            {% csrf_token %}
+            
+            {{ form.as_table }}
+            
+            <button type="submit" class="btn btn-success">Добавить товар</button>
+        </form>
+    </table>
+    
+    <span>{{ message }}</span>
+{% endblock %}
+

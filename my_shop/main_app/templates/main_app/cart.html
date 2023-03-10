@@ -1,0 +1,22 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %} 
+{{ title }}   
+{% endblock %}
+
+{% block content %} 
+    <h1>Корзина товаров</h1>
+    {% if products %}
+        {% for prod in products %}
+            <form action="main_app/add_to_cart.html"></form>
+                {% csrf_token %}
+                <div class="alert alert-warning mt-2">
+                    <button type="submit" class="btn btn-primary" ><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Оформить заказ</font></font></button>
+                </div>
+            </form>
+        {% endfor %}
+    {% else %}
+            <p>Товаров нет</p>
+    {% endif %}
+{% endblock %}
+
