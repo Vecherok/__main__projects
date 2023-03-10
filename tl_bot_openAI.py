@@ -1,12 +1,12 @@
-#5512356002:AAGYON50uo3s2tqCkTzCfcZHNi3slFAQBC4
+
 
 import openai
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 
-token = '5512356002:AAGYON50uo3s2tqCkTzCfcZHNi3slFAQBC4'
-openai.api_key = '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'
+token = 'key'
+openai.api_key = 'key'
 
 bot = Bot(token)
 dp = Dispatcher(bot)

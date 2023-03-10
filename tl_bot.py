@@ -1,11 +1,11 @@
-#5512356002:AAGYON50uo3s2tqCkTzCfcZHNi3slFAQBC4
+#
 
 import telebot
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 from time import sleep
 
-token = '5512356002:AAGYON50uo3s2tqCkTzCfcZHNi3slFAQBC4'
+token = 'key'
 
 soup1 = BeautifulSoup('<a>...</a>', 'lxml')
 print(soup1)
